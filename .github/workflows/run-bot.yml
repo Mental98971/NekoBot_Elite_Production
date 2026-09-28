@@ -4,14 +4,13 @@ on:
   push:
     branches: [ main ]
   schedule:
-    # Runs every 5 hours to stay safely under the 6-hour GitHub limit
     - cron: '0 */5 * * *'
   workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 350 # Terminate cleanly under 6 hours
+    timeout-minutes: 350
 
     steps:
       - name: Checkout Repository
